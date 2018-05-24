@@ -5,5 +5,5 @@ Members of the Project:
 
 1. Nishanth Antony Satler
 2. Maria Vinoth Kumar John Victor
-3. Ayodeji Awotunde
+3. Ayodeji Awotunde Aycooool
 4. Henry Ugokwe --

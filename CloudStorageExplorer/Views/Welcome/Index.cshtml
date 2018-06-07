@@ -1,0 +1,117 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="jumbotron">
+    <div id="welcomeWall">
+        <form>
+            <input id="mainSearchInput" type="text" name="search" placeholder="Search..">
+            <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#advancedOptions">Advanced Options</button>
+        </form>
+
+    </div>
+    <div>
+        <div id="advancedOptions" class="collapse">
+            <form>
+                <div class="form-group">
+                    <label for="filetype">Select File Type:</label>
+                    <select class="form-control" id="filetype">
+                        <option>Images</option>
+                        <option>Audio</option>
+                        <option>Video</option>
+                        <option>Document</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="dateModified">Select File Type:</label>
+                    <input type="date" name="dateModified" id="dateModified">
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <h2>Results</h2>
+    <br>
+    <div class="card bg-light text-dark">
+        <div class="card-body">File 1<button style="float:right" class="btn btn btn-primary">View</button></div>
+
+    </div>
+
+    <br>
+    <div class="card bg-light text-dark">
+        <div class="card-body">File 2 <button style="float:right" class="btn btn btn-primary">View</button></div>
+
+    </div>
+
+    <br>
+    <div class="card bg-light text-dark">
+        <div class="card-body">File 3<button style="float:right" class="btn btn btn-primary">View</button></div>
+
+    </div>
+
+    <br>
+    <div class="card bg-light text-dark">
+        <div class="card-body">File 4<button style="float:right" class="btn btn btn-primary">View</button></div>
+
+    </div>
+
+    <br>
+    <div class="card bg-light text-dark">
+        <div class="card-body">File 5e <button style="float:right" class="btn btn btn-primary">View</button></div>
+
+    </div>
+
+
+</div>
+<style>
+
+    .card{
+            padding: 10px 10px 10px 10px;
+    background: lightgrey;
+    border: 2px black solid;
+    }
+</style>
+
+<div class="row">
+    <h2>Available Connections</h2>
+
+    <div class="container">
+
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Provider Name</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Google</td>
+                    <td>john@example.com</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>One Drive</td>
+                    <td>mary@example.com</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Dropbox</td>
+                    <td>july@example.com</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+
+<link rel="stylesheet" href="~/Content/WelcomeIndex.css" />
+

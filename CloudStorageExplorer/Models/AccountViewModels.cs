@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿/***
+ * This class is responsible for User's Account operation
+ * */
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace CloudStorageExplorer.Models

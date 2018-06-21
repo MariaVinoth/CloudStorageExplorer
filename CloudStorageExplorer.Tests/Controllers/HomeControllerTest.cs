@@ -28,13 +28,14 @@ namespace CloudStorageExplorer.Tests.Controllers
         [TestMethod]
         public void About()
         {
-            // Arrange
+            // Arrange for Test
             HomeController controller = new HomeController();
 
             // Act
             ViewResult result = controller.About() as ViewResult;
 
             // Assert
+
             Assert.AreEqual("Your application description page.", result.ViewBag.Message);
         }
 

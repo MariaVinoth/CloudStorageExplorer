@@ -7,11 +7,19 @@
 <div class="jumbotron">
     <div id="welcomeWall">
         <form>
-            <input id="mainSearchInput" type="text" name="search" placeholder="Search..">
-            <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#advancedOptions">Advanced Options</button>
-        </form>
+            @*<div class="input-group">
 
-    </div>
+                <div class="input-group-btn">
+                    <button class="btn btn-default" type="submit" onclick="result(); return false;">
+                        <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                </div>
+            </div>*@
+            <input id="mainSearchInput" type="text" name="search" placeholder="Search..">
+            <button class="btn btn-default" type="submit" onclick="result(); return false;" />
+                <i class="glyphicon glyphicon-search"></i>
+        </form>
+        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#advancedOptions">Advanced Options</button>    </div>
     <div>
         <div id="advancedOptions" class="collapse">
             <form>
@@ -34,40 +42,7 @@
     </div>
 </div>
 
-<div class="container">
-    <h2>Results</h2>
-    <br>
-    <div class="card bg-light text-dark">
-        <div class="card-body">File 1<button style="float:right" class="btn btn btn-primary">View</button></div>
 
-    </div>
-
-    <br>
-    <div class="card bg-light text-dark">
-        <div class="card-body">File 2 <button style="float:right" class="btn btn btn-primary">View</button></div>
-
-    </div>
-
-    <br>
-    <div class="card bg-light text-dark">
-        <div class="card-body">File 3<button style="float:right" class="btn btn btn-primary">View</button></div>
-
-    </div>
-
-    <br>
-    <div class="card bg-light text-dark">
-        <div class="card-body">File 4<button style="float:right" class="btn btn btn-primary">View</button></div>
-
-    </div>
-
-    <br>
-    <div class="card bg-light text-dark">
-        <div class="card-body">File 5e <button style="float:right" class="btn btn btn-primary">View</button></div>
-
-    </div>
-
-
-</div>
 <style>
 
     .card{
@@ -75,7 +50,16 @@
     background: lightgrey;
     border: 2px black solid;
     }
+    .jumbotron{
+        margin-top:2%;
+    }
+    .glyphicon {
+        font-size: 270%;
+    }
 </style>
+<div class="row list">
+
+</div>
 
 <div class="row">
     <h2>Available Connections</h2>
@@ -111,6 +95,31 @@
     </div>
 
 </div>
+<script>function result() {
+        $("div.list").empty();
+        var result = ["result1", "result2","result3"];
+        var img_src = "Images/text_file.png"
+        var dt_crtd = "Jan 01 2018"
+        var dt_modfd = "Feb 01 2018"
+        var size = "10kb"
+        $("div.list").append("<div class='panel panel-primary'></div>");
+        $("div.panel-primary").append("<div class='panel-heading'></div>");
+        $("div.panel-heading").append("<h3 class='panel-title'>Here are your results ...</h3>");
+        $("div.panel-primary").append("<ul class='list-group'></ul>");
+
+
+        var href_value = "#"
+        var count = 0
+        for (var i in result) {
+            count = count + 1
+            $("ul.list-group").append("<div class='list-group-item item" + count + "'></div>")
+            $("div.item" + count).append("<img src='" + img_src + "' style = 'float:left' > ")
+            $("div.item" + count).append("<a href='" + href_value + "' style='float:left'>" + result[i] + "</a><br>")
+            $("div.item" + count).append("<div class='dt_crtd' style='float: left'>Created:" + dt_crtd + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>")
+            $("div.item" + count).append("<div class='dt_modfd' style='float:left'>Modified:" + dt_modfd + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>")
+            $("div.item" + count).append("<div class='f_size'>Size:" + size + "</div>")
+        }
+}</script>
 
 
 <link rel="stylesheet" href="~/Content/WelcomeIndex.css" />

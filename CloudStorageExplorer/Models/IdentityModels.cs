@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using CloudStorageExplorer.Migrations;
 
 namespace CloudStorageExplorer.Models
 {
@@ -20,14 +21,22 @@ namespace CloudStorageExplorer.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+        static ApplicationDbContext()
         {
+            Database.SetInitializer(new MySqlInitializer());
+        }
+
+        public ApplicationDbContext()
+            : base("DefaultConnection")
+        {
+          
         }
 
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<CloudStorageExplorer.Models.ApplicationUser> ApplicationUsers { get; set; }
     }
 }
